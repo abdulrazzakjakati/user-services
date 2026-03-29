@@ -28,13 +28,13 @@ public class UserService {
         return userMapper.userToUserDTO(user);
     }
 
-    public boolean deleteUserById(long id) {
-        if (userRepository.existsById(id)) {
-            userRepository.deleteById(id);
-            return true;
-        }
-        return false;
-    }
+//    public boolean deleteUserById(long id) {
+//        if (userRepository.existsById(id)) {
+//            userRepository.deleteById(id);
+//            return true;
+//        }
+//        return false;
+//    }
 
     public List<UserDTO> getAllUsers() {
         List<User> userList = userRepository.findAll();

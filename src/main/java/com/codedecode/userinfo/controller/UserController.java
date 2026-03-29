@@ -28,16 +28,6 @@ public class UserController {
         return ResponseEntity.ok(userDTO);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<UserDTO> deleteUserById(@PathVariable long id) {
-        boolean isDeleted = userService.deleteUserById(id);
-        if (isDeleted) {
-            return ResponseEntity.noContent().build();
-        } else {
-            return ResponseEntity.notFound().build();
-        }
-    }
-
     @GetMapping
     public ResponseEntity<List<UserDTO>> getAllUsers() {
         return ResponseEntity.ok().body(userService.getAllUsers());
