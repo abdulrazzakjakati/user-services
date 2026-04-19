@@ -4,6 +4,12 @@ import com.codedecode.userinfo.dto.UserDTO;
 import com.codedecode.userinfo.entity.User;
 
 public class UserMapper {
+
+    // Private constructor to prevent instantiation
+    private UserMapper() {
+        throw new UnsupportedOperationException("This is a utility class and cannot be instantiated");
+    }
+
     public static UserDTO mapUserToUserDTO(User user) {
         return new UserDTO(user.getUserId(), user.getUserName(),
             user.getUserPassword(), user.getAddress(), user.getCity());
